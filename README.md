@@ -2,7 +2,7 @@
 	philo
 
 # Description:
-	A 42 network project about thread.
+	A 42 network project about [thread](thread).
 
 	I need to create a program that generates "philosophers" whick are individual
 	threads and each of these philosophers are named philo_[#].
