@@ -6,7 +6,7 @@
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:50 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/05 12:57:20 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/06 13:17:48 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 
 # include "philo.h"
 # include "parsing.h"
+# include "ft_isdigit.h"
 
 #endif

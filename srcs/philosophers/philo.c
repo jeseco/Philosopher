@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.h                                          :+:      :+:    :+:   */
+/*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:12:12 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/06 12:56:59 by jcourtem         ###   ########.fr       */
+/*   Created: 2022/10/05 12:16:48 by jcourtem          #+#    #+#             */
+/*   Updated: 2022/10/05 12:36:18 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ATOI_H
-# define FT_ATOI_H
+#include <stdbool.h>
 
-int	ft_atoi(const char *str);
+#include "../includes/philo.h"
 
-#endif
+void	philo_routine(struct t_args *args)
+{
+	struct s_args *self;
+
+	self = args;
+	while (true)
+	{
+
+	}
+}
