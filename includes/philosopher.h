@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosopher.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:50 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/06 13:17:48 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:14:52 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <unistd.h>
 # include <sys/time.h>
 
-# include "philo.h"
-# include "parsing.h"
-# include "ft_isdigit.h"
+# include "parsing/ft_isdigit.h"
+
+int usage();
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:56 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/06 13:17:22 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:29:14 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@ int	usage()
 
 int main(int argc, char **argv)
 {
-	struct s_args	args;
+	// struct s_args	args;
 	struct timeval	*sim_start = NULL;
+
+	(void)argv;
+	(void)argc;
 	
 	if (argc != 5 && argc != 6){
 		return (usage());
 	}
-	args = parse(argc, argv);
+	// args = parse(argc, argv);
 	if (gettimeofday(sim_start, NULL) != 0) {
 		printf("Error getting time of days\n");
 		return (0);

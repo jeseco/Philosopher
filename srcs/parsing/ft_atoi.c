@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:09:24 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2022/10/06 13:18:07 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:15:29 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_atoi.h"
-#include "../includes/ft_isdigit.h"
+#include "../includes/parsing/ft_atoi.h"
+#include "../includes/parsing/ft_isdigit.h"
 
 int	ft_atoi(const char *str)
 {

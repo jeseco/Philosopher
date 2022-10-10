@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:51:21 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/06 14:03:09 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:16:27 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/parsing.h"
-
-
+#include "../includes/parsing/parsing.h"
 
 int	check_arg_is_valid(char *str)
 {
 	int	i;
+	int	current;
 
 	i = 0;
 	if (str)
 	{
 		while (str[i])
 		{
-			if (!ft_isdigit(str + i))
+			current = str[i];
+			if (!ft_isdigit(current))
 				return (0);
 			i++;
 		}
