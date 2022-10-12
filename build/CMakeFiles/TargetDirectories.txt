@@ -1,0 +1,8 @@
+/home/jeseco/42/Philosopher/build/CMakeFiles/rebuild_cache.dir
+/home/jeseco/42/Philosopher/build/CMakeFiles/edit_cache.dir
+/home/jeseco/42/Philosopher/build/CMakeFiles/philo.dir
+/home/jeseco/42/Philosopher/build/srcs/CMakeFiles/rebuild_cache.dir
+/home/jeseco/42/Philosopher/build/srcs/CMakeFiles/edit_cache.dir
+/home/jeseco/42/Philosopher/build/srcs/parsing/CMakeFiles/rebuild_cache.dir
+/home/jeseco/42/Philosopher/build/srcs/parsing/CMakeFiles/edit_cache.dir
+/home/jeseco/42/Philosopher/build/srcs/parsing/CMakeFiles/parsing.dir

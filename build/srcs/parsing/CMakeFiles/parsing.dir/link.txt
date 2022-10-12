@@ -1,0 +1,2 @@
+/usr/bin/ar qc libparsing.a CMakeFiles/parsing.dir/parsing.c.o CMakeFiles/parsing.dir/ft_atol.c.o CMakeFiles/parsing.dir/ft_isdigit.c.o
+/usr/bin/ranlib libparsing.a

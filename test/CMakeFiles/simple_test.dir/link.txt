@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/simple_test.dir/main_test.c.o -o simple_test 
