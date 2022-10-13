@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:56 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/12 11:55:19 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/13 15:21:54 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	sim(struct s_args args)
 	- [ ] init_philos
 	- [ ] start_sim
 */ 
-
 	(void) args;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosopher.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:50 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/10 10:08:15 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/13 15:26:00 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 # include "parsing/ft_isdigit.h"
 # include "parsing/parsing.h"
+# include "philo.h"
 
 int usage();
 
