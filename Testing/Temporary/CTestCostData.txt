@@ -1,4 +1,0 @@
-simple_test 8 0.000202549
-parsing_test 1 0
----
-parsing_test

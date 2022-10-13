@@ -1,1 +1,0 @@
-gcc CMakeFiles/parsing_test.dir/parsing_test.c.o -o parsing_test  /usr/lib/x86_64-linux-gnu/libcmocka.so ../srcs/parsing/libparsing.a 

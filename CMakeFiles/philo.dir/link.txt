@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/philo.dir/srcs/main.c.o -o philo  srcs/parsing/libparsing.a 
