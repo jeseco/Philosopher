@@ -1,0 +1,49 @@
+Start testing: Oct 12 14:15 EDT
+----------------------------------------------------------
+1/2 Testing: simple_test
+1/2 Test: simple_test
+Command: "/home/jeseco/42/Philosopher/test/simple_test"
+Directory: /home/jeseco/42/Philosopher/test
+"simple_test" start time: Oct 12 14:15 EDT
+Output:
+----------------------------------------------------------
+[==========] Running 1 test(s).
+[ RUN      ] null_test_success
+[       OK ] null_test_success
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"simple_test" end time: Oct 12 14:15 EDT
+"simple_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: parsing_test
+2/2 Test: parsing_test
+Command: "/home/jeseco/42/Philosopher/test/parsing_test"
+Directory: /home/jeseco/42/Philosopher/test
+"parsing_test" start time: Oct 12 14:15 EDT
+Output:
+----------------------------------------------------------
+[==========] Running 1 test(s).
+[ RUN      ] parsing_test_success
+[  ERROR   ] --- false
+[   LINE   ] --- /home/jeseco/42/Philosopher/test/parsing_test.c:24: error: Failure!
+[  FAILED  ] parsing_test_success
+[==========] 1 test(s) run.
+[  PASSED  ] 0 test(s).
+[  FAILED  ] 1 test(s), listed below:
+[  FAILED  ] parsing_test_success
+
+ 1 FAILED TEST(S)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"parsing_test" end time: Oct 12 14:15 EDT
+"parsing_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 12 14:15 EDT

@@ -3,13 +3,14 @@
 
 srcs/parsing/CMakeFiles/parsing.dir/ft_atol.c.o
  /home/jeseco/42/Philosopher/includes/parsing/ft_atol.h
+ /home/jeseco/42/Philosopher/includes/parsing/ft_isdigit.h
  /home/jeseco/42/Philosopher/srcs/parsing/ft_atol.c
 srcs/parsing/CMakeFiles/parsing.dir/ft_isdigit.c.o
  /home/jeseco/42/Philosopher/includes/parsing/ft_isdigit.h
  /home/jeseco/42/Philosopher/srcs/parsing/ft_isdigit.c
 srcs/parsing/CMakeFiles/parsing.dir/parsing.c.o
+ /home/jeseco/42/Philosopher/includes/parsing/ft_atol.h
+ /home/jeseco/42/Philosopher/includes/parsing/ft_isdigit.h
+ /home/jeseco/42/Philosopher/includes/parsing/parsing.h
+ /home/jeseco/42/Philosopher/includes/philosopher.h
  /home/jeseco/42/Philosopher/srcs/parsing/parsing.c
- includes/parsing/ft_atol.h
- includes/parsing/ft_isdigit.h
- includes/parsing/parsing.h
- includes/philosopher.h

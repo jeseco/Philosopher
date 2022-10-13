@@ -97,6 +97,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/jeseco/42/Philosopher/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/jeseco/42/Philosopher/build/CMakeFiles /home/jeseco/42/Philosopher/build/srcs/parsing//CMakeFiles/progress.marks
@@ -234,6 +245,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... parsing"
 	@echo "... ft_atol.o"
 	@echo "... ft_atol.i"

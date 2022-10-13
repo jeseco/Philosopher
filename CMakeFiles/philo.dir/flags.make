@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/jeseco/42/Philosopher/includes -I/home/jeseco/42/Philosopher/includes/parsing
 
-C_FLAGS = -Wextra -Wall -Werror -pthread
+C_FLAGS = 
 

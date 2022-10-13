@@ -14,6 +14,8 @@
 #ifndef FT_ATOL_H
 # define FT_ATOL_H
 
+# include "ft_isdigit.h"
+
 unsigned long ft_atol(const char *str);
 
 #endif

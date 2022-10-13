@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/simple_test.dir/main_test.c.o -o simple_test 
+gcc CMakeFiles/simple_test.dir/simple_test.c.o -o simple_test  /usr/lib/x86_64-linux-gnu/libcmocka.so ../srcs/parsing/libparsing.a 

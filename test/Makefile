@@ -142,6 +142,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+test/CMakeFiles/parsing_test.dir/rule:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/parsing_test.dir/rule
+.PHONY : test/CMakeFiles/parsing_test.dir/rule
+
+# Convenience name for target.
+parsing_test: test/CMakeFiles/parsing_test.dir/rule
+
+.PHONY : parsing_test
+
+# fast build rule for target.
+parsing_test/fast:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parsing_test.dir/build.make test/CMakeFiles/parsing_test.dir/build
+.PHONY : parsing_test/fast
+
+# Convenience name for target.
 test/CMakeFiles/simple_test.dir/rule:
 	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/simple_test.dir/rule
 .PHONY : test/CMakeFiles/simple_test.dir/rule
@@ -156,32 +171,59 @@ simple_test/fast:
 	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/build
 .PHONY : simple_test/fast
 
-main_test.o: main_test.c.o
+parsing_test.o: parsing_test.c.o
 
-.PHONY : main_test.o
+.PHONY : parsing_test.o
 
 # target to build an object file
-main_test.c.o:
-	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/main_test.c.o
-.PHONY : main_test.c.o
+parsing_test.c.o:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parsing_test.dir/build.make test/CMakeFiles/parsing_test.dir/parsing_test.c.o
+.PHONY : parsing_test.c.o
 
-main_test.i: main_test.c.i
+parsing_test.i: parsing_test.c.i
 
-.PHONY : main_test.i
+.PHONY : parsing_test.i
 
 # target to preprocess a source file
-main_test.c.i:
-	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/main_test.c.i
-.PHONY : main_test.c.i
+parsing_test.c.i:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parsing_test.dir/build.make test/CMakeFiles/parsing_test.dir/parsing_test.c.i
+.PHONY : parsing_test.c.i
 
-main_test.s: main_test.c.s
+parsing_test.s: parsing_test.c.s
 
-.PHONY : main_test.s
+.PHONY : parsing_test.s
 
 # target to generate assembly for a file
-main_test.c.s:
-	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/main_test.c.s
-.PHONY : main_test.c.s
+parsing_test.c.s:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parsing_test.dir/build.make test/CMakeFiles/parsing_test.dir/parsing_test.c.s
+.PHONY : parsing_test.c.s
+
+simple_test.o: simple_test.c.o
+
+.PHONY : simple_test.o
+
+# target to build an object file
+simple_test.c.o:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/simple_test.c.o
+.PHONY : simple_test.c.o
+
+simple_test.i: simple_test.c.i
+
+.PHONY : simple_test.i
+
+# target to preprocess a source file
+simple_test.c.i:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/simple_test.c.i
+.PHONY : simple_test.c.i
+
+simple_test.s: simple_test.c.s
+
+.PHONY : simple_test.s
+
+# target to generate assembly for a file
+simple_test.c.s:
+	cd /home/jeseco/42/Philosopher && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/simple_test.c.s
+.PHONY : simple_test.c.s
 
 # Help Target
 help:
@@ -192,10 +234,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... parsing_test"
 	@echo "... simple_test"
-	@echo "... main_test.o"
-	@echo "... main_test.i"
-	@echo "... main_test.s"
+	@echo "... parsing_test.o"
+	@echo "... parsing_test.i"
+	@echo "... parsing_test.s"
+	@echo "... simple_test.o"
+	@echo "... simple_test.i"
+	@echo "... simple_test.s"
 .PHONY : help
 
 

@@ -4,17 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/jeseco/42/Philosopher/test/main_test.c" "/home/jeseco/42/Philosopher/test/CMakeFiles/simple_test.dir/main_test.c.o"
+  "/home/jeseco/42/Philosopher/test/simple_test.c" "/home/jeseco/42/Philosopher/test/CMakeFiles/simple_test.dir/simple_test.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "test"
+  "/src"
+  "/includes"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/jeseco/42/Philosopher/srcs/parsing/CMakeFiles/parsing.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

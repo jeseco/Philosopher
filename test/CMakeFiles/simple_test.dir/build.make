@@ -76,28 +76,30 @@ include test/CMakeFiles/simple_test.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/simple_test.dir/flags.make
 
-test/CMakeFiles/simple_test.dir/main_test.c.o: test/CMakeFiles/simple_test.dir/flags.make
-test/CMakeFiles/simple_test.dir/main_test.c.o: test/main_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jeseco/42/Philosopher/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/simple_test.dir/main_test.c.o"
-	cd /home/jeseco/42/Philosopher/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/simple_test.dir/main_test.c.o -c /home/jeseco/42/Philosopher/test/main_test.c
+test/CMakeFiles/simple_test.dir/simple_test.c.o: test/CMakeFiles/simple_test.dir/flags.make
+test/CMakeFiles/simple_test.dir/simple_test.c.o: test/simple_test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jeseco/42/Philosopher/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/simple_test.dir/simple_test.c.o"
+	cd /home/jeseco/42/Philosopher/test && gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/simple_test.dir/simple_test.c.o -c /home/jeseco/42/Philosopher/test/simple_test.c
 
-test/CMakeFiles/simple_test.dir/main_test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/simple_test.dir/main_test.c.i"
-	cd /home/jeseco/42/Philosopher/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jeseco/42/Philosopher/test/main_test.c > CMakeFiles/simple_test.dir/main_test.c.i
+test/CMakeFiles/simple_test.dir/simple_test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/simple_test.dir/simple_test.c.i"
+	cd /home/jeseco/42/Philosopher/test && gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jeseco/42/Philosopher/test/simple_test.c > CMakeFiles/simple_test.dir/simple_test.c.i
 
-test/CMakeFiles/simple_test.dir/main_test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/simple_test.dir/main_test.c.s"
-	cd /home/jeseco/42/Philosopher/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jeseco/42/Philosopher/test/main_test.c -o CMakeFiles/simple_test.dir/main_test.c.s
+test/CMakeFiles/simple_test.dir/simple_test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/simple_test.dir/simple_test.c.s"
+	cd /home/jeseco/42/Philosopher/test && gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jeseco/42/Philosopher/test/simple_test.c -o CMakeFiles/simple_test.dir/simple_test.c.s
 
 # Object files for target simple_test
 simple_test_OBJECTS = \
-"CMakeFiles/simple_test.dir/main_test.c.o"
+"CMakeFiles/simple_test.dir/simple_test.c.o"
 
 # External object files for target simple_test
 simple_test_EXTERNAL_OBJECTS =
 
-test/simple_test: test/CMakeFiles/simple_test.dir/main_test.c.o
+test/simple_test: test/CMakeFiles/simple_test.dir/simple_test.c.o
 test/simple_test: test/CMakeFiles/simple_test.dir/build.make
+test/simple_test: /usr/lib/x86_64-linux-gnu/libcmocka.so
+test/simple_test: srcs/parsing/libparsing.a
 test/simple_test: test/CMakeFiles/simple_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jeseco/42/Philosopher/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable simple_test"
 	cd /home/jeseco/42/Philosopher/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simple_test.dir/link.txt --verbose=$(VERBOSE)

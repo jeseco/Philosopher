@@ -86,17 +86,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -107,6 +96,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -337,6 +337,32 @@ Continuous/fast:
 .PHONY : Continuous/fast
 
 #=============================================================================
+# Target rules for targets named Nightly
+
+# Build rule for target.
+Nightly: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Nightly
+.PHONY : Nightly
+
+# fast build rule for target.
+Nightly/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nightly.dir/build.make CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
+
+#=============================================================================
+# Target rules for targets named NightlySubmit
+
+# Build rule for target.
+NightlySubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlySubmit
+.PHONY : NightlySubmit
+
+# fast build rule for target.
+NightlySubmit/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NightlySubmit.dir/build.make CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
+
+#=============================================================================
 # Target rules for targets named NightlyStart
 
 # Build rule for target.
@@ -374,45 +400,6 @@ NightlyCoverage: cmake_check_build_system
 NightlyCoverage/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NightlyCoverage.dir/build.make CMakeFiles/NightlyCoverage.dir/build
 .PHONY : NightlyCoverage/fast
-
-#=============================================================================
-# Target rules for targets named Nightly
-
-# Build rule for target.
-Nightly: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Nightly
-.PHONY : Nightly
-
-# fast build rule for target.
-Nightly/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nightly.dir/build.make CMakeFiles/Nightly.dir/build
-.PHONY : Nightly/fast
-
-#=============================================================================
-# Target rules for targets named NightlySubmit
-
-# Build rule for target.
-NightlySubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlySubmit
-.PHONY : NightlySubmit
-
-# fast build rule for target.
-NightlySubmit/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NightlySubmit.dir/build.make CMakeFiles/NightlySubmit.dir/build
-.PHONY : NightlySubmit/fast
-
-#=============================================================================
-# Target rules for targets named philo
-
-# Build rule for target.
-philo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 philo
-.PHONY : philo
-
-# fast build rule for target.
-philo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/philo.dir/build.make CMakeFiles/philo.dir/build
-.PHONY : philo/fast
 
 #=============================================================================
 # Target rules for targets named ExperimentalStart
@@ -532,6 +519,19 @@ parsing/fast:
 .PHONY : parsing/fast
 
 #=============================================================================
+# Target rules for targets named parsing_test
+
+# Build rule for target.
+parsing_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 parsing_test
+.PHONY : parsing_test
+
+# fast build rule for target.
+parsing_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/parsing_test.dir/build.make test/CMakeFiles/parsing_test.dir/build
+.PHONY : parsing_test/fast
+
+#=============================================================================
 # Target rules for targets named simple_test
 
 # Build rule for target.
@@ -543,33 +543,6 @@ simple_test: cmake_check_build_system
 simple_test/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/simple_test.dir/build.make test/CMakeFiles/simple_test.dir/build
 .PHONY : simple_test/fast
-
-srcs/main.o: srcs/main.c.o
-
-.PHONY : srcs/main.o
-
-# target to build an object file
-srcs/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/philo.dir/build.make CMakeFiles/philo.dir/srcs/main.c.o
-.PHONY : srcs/main.c.o
-
-srcs/main.i: srcs/main.c.i
-
-.PHONY : srcs/main.i
-
-# target to preprocess a source file
-srcs/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/philo.dir/build.make CMakeFiles/philo.dir/srcs/main.c.i
-.PHONY : srcs/main.c.i
-
-srcs/main.s: srcs/main.c.s
-
-.PHONY : srcs/main.s
-
-# target to generate assembly for a file
-srcs/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/philo.dir/build.make CMakeFiles/philo.dir/srcs/main.c.s
-.PHONY : srcs/main.c.s
 
 # Help Target
 help:
@@ -609,11 +582,8 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... parsing"
-	@echo "... philo"
+	@echo "... parsing_test"
 	@echo "... simple_test"
-	@echo "... srcs/main.o"
-	@echo "... srcs/main.i"
-	@echo "... srcs/main.s"
 .PHONY : help
 
 

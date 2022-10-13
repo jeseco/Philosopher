@@ -6,7 +6,7 @@
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 09:47:34 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/11 17:14:20 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/12 11:53:18 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ unsigned long	ft_atol(const char *str)
 {
 	long			i;
 	unsigned long	nbr;
-	int				isneg;
 
 	i = 0;
 	nbr = 0;

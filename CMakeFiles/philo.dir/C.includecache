@@ -7,10 +7,14 @@
 #IncludeRegexTransform: 
 
 /home/jeseco/42/Philosopher/includes/parsing/ft_atol.h
+ft_isdigit.h
+/home/jeseco/42/Philosopher/includes/parsing/ft_isdigit.h
 
 /home/jeseco/42/Philosopher/includes/parsing/ft_isdigit.h
 
 /home/jeseco/42/Philosopher/includes/parsing/parsing.h
+string.h
+-
 philosopher.h
 /home/jeseco/42/Philosopher/includes/parsing/philosopher.h
 ft_isdigit.h
