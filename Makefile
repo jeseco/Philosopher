@@ -6,7 +6,7 @@
 #    By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 14:14:28 by jcourtem          #+#    #+#              #
-#    Updated: 2022/10/13 14:18:43 by jcourtem         ###   ########.fr        #
+#    Updated: 2022/10/13 15:30:13 by jcourtem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,4 +101,7 @@ re: fclean all
 
 redebug: fclean debug
 
-.PHONY: all clean fclean re linux debug redebug
+github: fclean
+	git add *; git commit -m "auto commit from makefile"; git push github
+
+.PHONY: all clean fclean re linux debug redebug github
