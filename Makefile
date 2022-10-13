@@ -6,7 +6,7 @@
 #    By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 14:14:28 by jcourtem          #+#    #+#              #
-#    Updated: 2022/10/13 15:30:13 by jcourtem         ###   ########.fr        #
+#    Updated: 2022/10/13 15:35:22 by jcourtem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ VPATH				=	$(SRCS_PATH) $(PARSING_PATH)
 ALL_INCLUDES		= 	-I$(INC_PATH)\
 						-I$(INC_PATH)$(PARSING_PATH)
 
-USAGE				=	USAGE: ./philosopher [number_of_philo] [time_to_die] [time_to_eat] [time_to_sleep] | OPTIONAL: [number_of_meal]
+USAGE				=	"USAGE: ./philosopher [number_of_philo] [time_to_die] [time_to_eat] [time_to_sleep] | OPTIONAL: [number_of_meal]"
 
 $(OBJS_PATH)%.o: %.c
 	@$(CC) $(CFLAGS) $(ALL_INCLUDES) -c $< -o $@

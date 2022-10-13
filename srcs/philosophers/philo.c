@@ -6,13 +6,13 @@
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:48 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/13 15:23:07 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:40:28 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
 
-#include "../../includes/philo.h"
+#include "../includes/philo.h"
 
 void think();
 
