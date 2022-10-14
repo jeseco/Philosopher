@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+         #
+#    By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 14:14:28 by jcourtem          #+#    #+#              #
-#    Updated: 2022/10/13 15:35:22 by jcourtem         ###   ########.fr        #
+#    Updated: 2022/10/13 17:25:54 by jeseco           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INC_PATH			=	includes/
 OBJS_PATH 			=	objs/
 SRCS_PATH 			=	srcs/
 CC 					=	gcc
-CFLAGS				=	-Wall -Werror -Wextra -Wpedantic -pthread
+CFLAGS				=	-Wall -Werror -Wextra -pthread
 RM					=	rm -rf
 
 INC_FILES 			=	parsign.h \
@@ -33,20 +33,26 @@ PARSING_HDRS		=	parsign.h \
 						ft_atol.h \
 						ft_isdigit.h 
 
+SIMULATION_FILES	=	simulation.c
+SIMULATION_HDRS		=	simulation.h
+
 PARSING_PATH		= 	$(SRCS_PATH)parsing/
+SIMULATION_PATH		=	$(SRCS_PATH)simulation/
 
 SRCS 				=	$(addprefix $(SRCS_PATH), $(SRCS_FILES))
 PARSING_SRCS		= 	$(addprefix $(PARSING_PATH), $(PARSING_FILES))
-
-OBJS_FILES			= 	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o)
+SIMULATION_SRCS		=	$(addprefix $(SIMULATION_PATH), $(SIMULATION_FILES))
 
 INCLUDES			=	$(addprefix $(INC_PATH), $(INC_FILES))	
+
+OBJS_FILES			= 	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(SIMULATION_FILES:.c=.o)
 OBJS 				=	$(addprefix $(OBJS_PATH), $(OBJS_FILES))
 
-VPATH				=	$(SRCS_PATH) $(PARSING_PATH)
+VPATH				=	$(SRCS_PATH) $(PARSING_PATH) $(SIMULATION_PATH)
 
 ALL_INCLUDES		= 	-I$(INC_PATH)\
-						-I$(INC_PATH)$(PARSING_PATH)
+						-I$(INC_PATH)$(PARSING_PATH)\
+						-I$(INC_PATH)$(SIMULATION_PATH)
 
 USAGE				=	"USAGE: ./philosopher [number_of_philo] [time_to_die] [time_to_eat] [time_to_sleep] | OPTIONAL: [number_of_meal]"
 

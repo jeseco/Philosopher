@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:51:21 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/13 14:19:59 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:56:51 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/philosopher.h" 
+#include "../../includes/philo.h" 
 #include "../../includes/parsing/parsing.h"
 #include "../../includes/parsing/ft_atol.h"
 #include "../../includes/parsing/ft_isdigit.h"
@@ -47,7 +47,7 @@ bool check_args(struct s_args args)
 	return (true);
 }
 
-struct s_args	parse(int argc, char **argv)
+t_args	parse(int argc, char **argv)
 {
 	struct s_args args;
 
