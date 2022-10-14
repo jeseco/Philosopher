@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   waitor.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:52:20 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/14 08:56:27 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/14 15:19:44 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 #include "../../includes/waitor/waitor.h"
 
-void    init_waitor()
+void    waitor(t_philosophers *philosophers, t_args *args)
 {
     while (true)
     {
-        /* code */
+       
     }
 }

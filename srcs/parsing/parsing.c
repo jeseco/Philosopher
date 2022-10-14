@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:51:21 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/13 16:56:51 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/14 09:35:28 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_args	parse(int argc, char **argv)
 	args.time_to_eat = check_arg_is_num(argv[3]);
 	args.time_to_sleep = check_arg_is_num(argv[4]);
 	
+	// TODO: [ ] CHECK IF EVERY ARGS > 0; ELSE 
 	if (argc == 6)
 		args.number_of_meal = ft_atol(argv[5]);
 	else

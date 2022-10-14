@@ -6,7 +6,7 @@
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:48 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/13 15:40:28 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:22:31 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,21 @@ void sleep();
 
 void eat();
 
-struct s_state	check_state(struct s_self self)
+void	philo_routine(struct t_philosophers *philo)
+{
+	pthread_t		tid;
+	t_philosophers	*self;
+
+	self = philo;
+	while(self->state) {
+		self->state = self_state_check(self);
+		if (self->state == hungry)
+			eat();	
+			sleep();
+	}
+}
+
+enum state check_state(struct t_philosophers *self, t_args *args)
 {
 	/*check wheter the philo is still alive
 		if philo is still alive, check if philo is hungry
@@ -28,16 +42,22 @@ struct s_state	check_state(struct s_self self)
 	*/	
 }
 
-void	philo_routine(struct s_args args)
+t_philosophers *init_philosophers(int num_philo)
 {
-	struct s_self self;
+	int	i;
+	t_philosophers 	*philosophers;
+	t_philosophers	*current;
 
-	while (self.state.alive)
+	i = 1;
+	if (!(philosophers = ft_calloc(num_philo, sizeof(t_philosophers))))
+		return (clean_exit());
+	current = philosophers;
+	while (i <= num_philo)
 	{
-		self.state = check_state(self);
-		if (!self.state.alive)
-			return (notifiy_waitor(self));
-		if (self.state.hungry)
-			eat();
+		current->name = i;
+		current->state = thinking;
+		current->alive = true;
+		current++;
+		i++;
 	}
 }
