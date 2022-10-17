@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.h                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:18:18 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/17 03:31:02 by jeseco           ###   ########.fr       */
+/*   Created: 2021/05/26 10:27:33 by JEAN-SEBA         #+#    #+#             */
+/*   Updated: 2021/05/26 10:30:53 by JEAN-SEBA        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ISDIGIT_H
-# define FT_ISDIGIT_H
+#include "libft.h"
 
-int	ft_isdigit(int c);
+void	ft_bzero(void *str, size_t n)
+{
+	char	*pt_str;
 
-#endif
+	pt_str = str;
+	while (n-- > 0)
+		*pt_str++ = '\0';
+}

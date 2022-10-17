@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.h                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:18:18 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/17 03:31:02 by jeseco           ###   ########.fr       */
+/*   Created: 2022/10/14 14:41:16 by jcourtem          #+#    #+#             */
+/*   Updated: 2022/10/17 01:53:32 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ISDIGIT_H
-# define FT_ISDIGIT_H
+int	current_time()
+{
+	struct timeval tv;
 
-int	ft_isdigit(int c);
-
-#endif
+	gettimeofday(&tv, NULL);
+	return ((tv.tv_sec * 1000) + (tv.tv_sec / 1000));
+}

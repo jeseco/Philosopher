@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.h                                       :+:      :+:    :+:   */
+/*   ft_bzero.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:18:18 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/17 03:31:02 by jeseco           ###   ########.fr       */
+/*   Created: 2022/10/16 22:59:59 by jeseco            #+#    #+#             */
+/*   Updated: 2022/10/16 23:00:38 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ISDIGIT_H
-# define FT_ISDIGIT_H
+#ifndef FT_BZERO_H
+# define FT_BZERO_H
 
-int	ft_isdigit(int c);
+void	ft_bzero(void *str, size_t n)
 
 #endif

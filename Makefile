@@ -6,7 +6,7 @@
 #    By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 14:14:28 by jcourtem          #+#    #+#              #
-#    Updated: 2022/10/13 17:25:54 by jeseco           ###   ########.fr        #
+#    Updated: 2022/10/16 22:25:43 by jeseco           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,23 +36,35 @@ PARSING_HDRS		=	parsign.h \
 SIMULATION_FILES	=	simulation.c
 SIMULATION_HDRS		=	simulation.h
 
+PHILOSOPHERS_FILES	= 	philosophers.c
+PHILOSOPHERS_HDRS	= 	philosophers.h
+
+UTILS_FILES			=	utils.c
+UTILS_HDRS			=	utils.h
+
 PARSING_PATH		= 	$(SRCS_PATH)parsing/
 SIMULATION_PATH		=	$(SRCS_PATH)simulation/
+PHILOSOPHERS_PATH	=	$(SRCS_PATH)philosophers/
+UTILS_PATH			=	$(SRCS_PATH)utils/
 
 SRCS 				=	$(addprefix $(SRCS_PATH), $(SRCS_FILES))
 PARSING_SRCS		= 	$(addprefix $(PARSING_PATH), $(PARSING_FILES))
 SIMULATION_SRCS		=	$(addprefix $(SIMULATION_PATH), $(SIMULATION_FILES))
+PHILOSOPHERS_SRCS	=	$(addprefix $(PHILOSOPHERS_PATH), $(PHILOSOPHERS_FILES))
+UTILS_SRCS			=	$(addprefix $(UTILS_PATH), $(UTILS_FILES))
 
 INCLUDES			=	$(addprefix $(INC_PATH), $(INC_FILES))	
 
-OBJS_FILES			= 	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(SIMULATION_FILES:.c=.o)
+OBJS_FILES			= 	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(SIMULATION_FILES:.c=.o) $(PHILOSOPHERS_FILES:.c=.o) $(UTILS_FILES:.c=.o)
 OBJS 				=	$(addprefix $(OBJS_PATH), $(OBJS_FILES))
 
-VPATH				=	$(SRCS_PATH) $(PARSING_PATH) $(SIMULATION_PATH)
+VPATH				=	$(SRCS_PATH) $(PARSING_PATH) $(SIMULATION_PATH) $(UTILS_PATH) $(PHILOSOPHERS_PATH)
 
 ALL_INCLUDES		= 	-I$(INC_PATH)\
 						-I$(INC_PATH)$(PARSING_PATH)\
-						-I$(INC_PATH)$(SIMULATION_PATH)
+						-I$(INC_PATH)$(SIMULATION_PATH)\
+						-I$(INC_PATH)$(PHILOSOPHERS_PATH)\
+						-I$(INC_PATH)$(UTILS_FILES)
 
 USAGE				=	"USAGE: ./philosopher [number_of_philo] [time_to_die] [time_to_eat] [time_to_sleep] | OPTIONAL: [number_of_meal]"
 

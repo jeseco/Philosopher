@@ -6,13 +6,13 @@
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:28:02 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/13 17:18:53 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/17 03:34:54 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SIMULATION_H
 # define SIMULATION_H
 
-void    simulation(t_args args);
+void	simulation(t_args args);
 
 #endif

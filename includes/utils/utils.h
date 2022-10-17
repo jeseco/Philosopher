@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   something.c                                        :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:41:16 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/14 15:04:20 by jcourtem         ###   ########.fr       */
+/*   Created: 2022/10/16 22:22:06 by jeseco            #+#    #+#             */
+/*   Updated: 2022/10/17 03:35:09 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	current_time()
-{
-	struct timeval tv;
+#ifndef UTILS_H
+# define UTILS_H
 
-	gettimeofday(&tv, NULL);
-	return ((tv.tv_sec * 1000) + (tv.tv_sec / 1000));
-}
+# include "ft_bzero.h"
+# include "ft_calloc.h"
+
+int	current_time(void);
+
+#endif

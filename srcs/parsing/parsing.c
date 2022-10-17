@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:51:21 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/14 09:35:28 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/17 03:37:13 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_arg_is_num(char *str)
 	return (ft_atol(str));
 }
 
-bool check_args(struct s_args args)
+bool	check_args(struct s_args args)
 {
 	if (!args.nu_philo)
 		return (false);
@@ -49,17 +49,15 @@ bool check_args(struct s_args args)
 
 t_args	parse(int argc, char **argv)
 {
-	struct s_args args;
+	struct s_args	args;
 
 	args.nu_philo = check_arg_is_num(argv[1]);
 	args.time_to_die = check_arg_is_num(argv[2]);
 	args.time_to_eat = check_arg_is_num(argv[3]);
 	args.time_to_sleep = check_arg_is_num(argv[4]);
-	
-	// TODO: [ ] CHECK IF EVERY ARGS > 0; ELSE 
 	if (argc == 6)
 		args.number_of_meal = ft_atol(argv[5]);
 	else
-		args.number_of_meal = 0;	
+		args.number_of_meal = 0;
 	return (args);
 }

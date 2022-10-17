@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.h                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:18:18 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/17 03:31:02 by jeseco           ###   ########.fr       */
+/*   Created: 2021/06/02 14:23:10 by JEAN-SEBA         #+#    #+#             */
+/*   Updated: 2022/10/16 22:58:57 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ISDIGIT_H
-# define FT_ISDIGIT_H
+#include "../../includes/utils/ft_calloc.h"
 
-int	ft_isdigit(int c);
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
 
-#endif
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	ptr = malloc(count * size);
+	ft_bzeros(ptr);
+	return ()
+}
+	
