@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:50 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/17 03:35:56 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/17 11:47:23 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 # include "parsing/parsing.h"
 # include "simulation/simulation.h"
+# include "philosophers/philosopher.h"
 
 int	usage(void);
 

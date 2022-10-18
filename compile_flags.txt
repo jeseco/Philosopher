@@ -1,0 +1,10 @@
+-Wall
+-Wextra
+-Werror
+-pthread
+-Iincludes/
+-Iincludes/parsing/
+-Iincludes/philosophers/
+-Iincludes/simulation/
+-Iincludes/utils/
+-Iincludes/waitor/

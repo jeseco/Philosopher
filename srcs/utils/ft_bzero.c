@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 10:27:33 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/05/26 10:30:53 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2022/10/18 10:46:46 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/utils/utils.h"
+#include "../includes/utils/ft_bzero.h"
 
 void	ft_bzero(void *str, size_t n)
 {

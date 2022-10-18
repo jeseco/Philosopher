@@ -6,18 +6,25 @@
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:52:20 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/14 15:19:44 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:13:46 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
 
 #include "../../includes/waitor/waitor.h"
+#include "../../includes/philosophers/philosopher.h"
 
-void    waitor(t_philosophers *philosophers, t_args *args)
+void	waitor(t_args args, t_philosophers *philosophers, bool *simulation_run)
 {
-    while (true)
-    {
-       
-    }
+	unsigned int	i;
+
+	i = 1;
+	while (simulation_run && i <= args.nu_philo)
+	{
+		if (!(philosophers[i].alive))
+			simulation_run = false;
+		if (i == args.nu_philo)
+			i = 1;
+	}
 }

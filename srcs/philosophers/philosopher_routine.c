@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   philosopher_routine.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 03:46:58 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/17 03:47:40 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/18 14:04:30 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/philo.h"
+#include "../includes/philosophers/philosopher.h"
+
 void	philo_think(t_philosophers *philo)
 {
-	philo->state = thinking;
-	while (philo->alive && philo->state != hungry)
+	philo->state = THINKING;
+	while (philo->alive && philo->state != HUNGRY)
 	{
-		philo->state = check_state(philo);
 		usleep(9 * 1000);
-		philo->time_from_last_meal += 9;
+		philo->last_meal += 9;
 	}
 	usleep(philo->time_to_think);
-	philo->state = thinking;
+	philo->state = THINKING;
 }
 
 void	philo_sleep(t_philosophers *philo)
 {
-	philo->state = sleeping;
+	philo->state = SLEEPING;
 	usleep(philo->time_to_sleep);
 }
 
@@ -34,15 +36,18 @@ void	philo_eat(t_philosophers *philo)
 	usleep(philo->time_to_eat);
 }
 
-void	philo_routine(t_philosophers *philo)
+void	*philo_routine(void *philosopher)
 {
-	while (philo->alive)
+	t_philosophers	*self;
+
+	self = philosopher;
+	while (self->alive)
 	{
-		philo->state = check_state(philo);
-		if (philo->state == hungry)
+		if (self->state == HUNGRY)
 		{
-			philo_eat(philo);
-			philo_sleep(philo);
+			philo_eat(self);
+			philo_sleep(self);
 		}
 	}
+	return (NULL);
 }

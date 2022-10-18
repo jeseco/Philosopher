@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 22:59:59 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/16 23:00:38 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/17 11:49:04 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BZERO_H
 # define FT_BZERO_H
 
-void	ft_bzero(void *str, size_t n)
+# include "../includes/philo.h"
+
+void	ft_bzero(void *str, size_t n);
 
 #endif

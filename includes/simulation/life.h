@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   life.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 03:50:07 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/17 03:51:19 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/18 13:44:54 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIFE_H
 # define LIFE_H
 
-void	life(t_philosophers *philo);
+# include "../includes/philosophers/philosopher.h"
+
+void	*life(void *philo);
 
 #endif

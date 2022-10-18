@@ -3,19 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 22:22:06 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/17 03:35:09 by jeseco           ###   ########.fr       */
+/*   Created: 2022/10/17 11:45:18 by jcourtem          #+#    #+#             */
+/*   Updated: 2022/10/18 13:47:06 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
-# include "ft_bzero.h"
-# include "ft_calloc.h"
+# include "../includes/philo.h"
 
-int	current_time(void);
+void	*ft_calloc(size_t count, size_t size);
+
+int		exit_clean(t_philosophers *philosopher);
+
+int		get_current_time(void);
 
 #endif

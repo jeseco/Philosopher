@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+         #
+#    By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 14:14:28 by jcourtem          #+#    #+#              #
-#    Updated: 2022/10/16 22:25:43 by jeseco           ###   ########.fr        #
+#    Updated: 2022/10/18 14:07:11 by jcourtem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,36 +16,48 @@ INC_PATH			=	includes/
 OBJS_PATH 			=	objs/
 SRCS_PATH 			=	srcs/
 CC 					=	gcc
-CFLAGS				=	-Wall -Werror -Wextra -pthread
+CFLAGS				=	-Wall -Werror -Wextra -pthread -g
 RM					=	rm -rf
 
-INC_FILES 			=	parsign.h \
-						ft_atol.h \
+INC_FILES 			=	parsign.h		\
+						ft_atol.h 		\
 						ft_isdigit.h 
 
 
 SRCS_FILES			=	main.c
 
-PARSING_FILES		=	ft_atol.c \
-						ft_isdigit.c \
+PARSING_FILES		=	ft_atol.c		\
+						ft_isdigit.c	\
 						parsing.c
-PARSING_HDRS		=	parsign.h \
-						ft_atol.h \
+PARSING_HDRS		=	parsign.h		\
+						ft_atol.h		\
 						ft_isdigit.h 
 
-SIMULATION_FILES	=	simulation.c
-SIMULATION_HDRS		=	simulation.h
+SIMULATION_FILES	=	simulation.c	\
+						life.c
+SIMULATION_HDRS		=	simulation.h	\
+						life.h
 
-PHILOSOPHERS_FILES	= 	philosophers.c
-PHILOSOPHERS_HDRS	= 	philosophers.h
+PHILOSOPHERS_FILES	= 	philosophers.c	\
+						philosopher_routine.c
+PHILOSOPHERS_HDRS	= 	philosophers.h	\
+						philosopher_routine.h
 
-UTILS_FILES			=	utils.c
-UTILS_HDRS			=	utils.h
+UTILS_FILES			=	utils.c			\
+						ft_bzero.c		\
+						ft_calloc.c
+UTILS_HDRS			=	utils.h			\
+						ft_bzero.h		\
+						ft_calloc.c	
+						
+WAITOR_FILES		=	waitor.c
+WAITOR_HDRS			=	waitor.h
 
 PARSING_PATH		= 	$(SRCS_PATH)parsing/
 SIMULATION_PATH		=	$(SRCS_PATH)simulation/
 PHILOSOPHERS_PATH	=	$(SRCS_PATH)philosophers/
 UTILS_PATH			=	$(SRCS_PATH)utils/
+WAITOR_PATH			=	$(SRCS_PATH)waitor/
 
 SRCS 				=	$(addprefix $(SRCS_PATH), $(SRCS_FILES))
 PARSING_SRCS		= 	$(addprefix $(PARSING_PATH), $(PARSING_FILES))
@@ -55,16 +67,17 @@ UTILS_SRCS			=	$(addprefix $(UTILS_PATH), $(UTILS_FILES))
 
 INCLUDES			=	$(addprefix $(INC_PATH), $(INC_FILES))	
 
-OBJS_FILES			= 	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(SIMULATION_FILES:.c=.o) $(PHILOSOPHERS_FILES:.c=.o) $(UTILS_FILES:.c=.o)
+OBJS_FILES			= 	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(SIMULATION_FILES:.c=.o) $(PHILOSOPHERS_FILES:.c=.o) $(UTILS_FILES:.c=.o) $(WAITOR_FILES:.c=.o)
 OBJS 				=	$(addprefix $(OBJS_PATH), $(OBJS_FILES))
 
-VPATH				=	$(SRCS_PATH) $(PARSING_PATH) $(SIMULATION_PATH) $(UTILS_PATH) $(PHILOSOPHERS_PATH)
+VPATH				=	$(SRCS_PATH) $(PARSING_PATH) $(SIMULATION_PATH) $(UTILS_PATH) $(PHILOSOPHERS_PATH) $(WAITOR_PATH)
 
-ALL_INCLUDES		= 	-I$(INC_PATH)\
-						-I$(INC_PATH)$(PARSING_PATH)\
-						-I$(INC_PATH)$(SIMULATION_PATH)\
-						-I$(INC_PATH)$(PHILOSOPHERS_PATH)\
-						-I$(INC_PATH)$(UTILS_FILES)
+ALL_INCLUDES		= 	-I$(INC_PATH)						\
+						-I$(INC_PATH)$(PARSING_PATH)		\
+						-I$(INC_PATH)$(SIMULATION_PATH)		\
+						-I$(INC_PATH)$(PHILOSOPHERS_PATH)	\
+						-I$(INC_PATH)$(WAITOR_PATH)			\
+						-I$(INC_PATH)$(UTILS_PATH)
 
 USAGE				=	"USAGE: ./philosopher [number_of_philo] [time_to_die] [time_to_eat] [time_to_sleep] | OPTIONAL: [number_of_meal]"
 
