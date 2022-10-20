@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosopher.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:44:04 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/18 14:01:22 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:16:21 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ typedef struct s_philosophers
 	unsigned long	last_meal;
 	unsigned long	time_to_think;
 	unsigned long	time_to_hunger;
-	pthread_t		*life;	
-	pthread_t		*routine;
+	pthread_t		life;	
+	pthread_t		routine;
 	t_State			state;
 }	t_philosophers;
 

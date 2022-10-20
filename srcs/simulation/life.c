@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   life.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:58:12 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/18 14:00:31 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:21:41 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pthread.h>
 #include <stdbool.h>
-#include <sys/_pthread/_pthread_t.h>
 #include <sys/time.h>
 #include <sys/wait.h>
 #include <time.h>
@@ -25,10 +24,11 @@ extern void	*life(void *philosopher)
 {
 	time_t			current_time;
 	t_philosophers	*philo;
+	pthread_t		routine_tid;
 
 	philo = philosopher;
-	printf("Birth of philosopher_%d\n", philo->name);
-	pthread_create(philo->routine, NULL, philo_routine, philo);
+	routine_tid = philo->routine;
+	pthread_create(&routine_tid, NULL, philo_routine, philo);
 	while (philo->alive)
 	{
 		current_time = get_current_time();

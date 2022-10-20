@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:48 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/18 14:19:11 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:23:58 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ struct s_philosophers	*init_philosophers(t_args args, bool *simulation_run)
 	philosophers = ft_calloc(args.nu_philo, sizeof(t_philosophers));
 	while (i <= args.nu_philo)
 	{
-		current = philosophers + i;
+		current = philosophers + (i - 1);
 		current->name = i;
 		current->state = THINKING;
 		current->time_to_die = args.time_to_die;

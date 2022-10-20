@@ -12,6 +12,7 @@
 
 #include <stdbool.h>
 #include <sys/time.h>
+#include <time.h>
 
 #include "../../includes/philo.h"
 #include "../../includes/parsing/parsing.h"
@@ -21,25 +22,32 @@
 #include "../../includes/utils/utils.h"
 #include "../../includes/simulation/life.h"
 
-int	create_life(t_philosophers	*philosopher)
+int	create_life(void *philosopher)
 {
-	philosopher->alive = true;
-	pthread_create(philosopher->life, NULL, life, philosopher);
+	pthread_t		life_tid;
+	t_philosophers	*philo;
+
+	philo = philosopher;
+	life_tid = philo->life;
+	philo->alive = true;
+	printf("Birth of philosopher_%d\n", philo->name);
+	pthread_create(&life_tid, NULL, life, philo);
 	return (0);
 }
 
-int	simulation_start(unsigned int nu_philo, t_philosophers *philosopher)
+int	simulation_start(unsigned int nu_philo, t_philosophers *philosophers)
 {
 	unsigned int	i;
 	t_philosophers	*current;
 	struct timeval	simulation_start_time;
 
+
 	i = 0;
 	gettimeofday(&simulation_start_time, NULL);
-	printf("simulation started");
+	printf("0000: simulation started\n");
 	while (i < nu_philo)
 	{
-		current = philosopher + i;
+		current = philosophers + i;
 		create_life(current);
 		i++;
 	}

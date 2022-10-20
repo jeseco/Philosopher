@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:28:02 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/18 13:48:43 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:14:57 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	simulation(t_args args);
 
-int	create_life(t_philosophers *philosoher);
+int	create_life(void *philosoher);
 
 int	simulation_start(unsigned int nu_philo, t_philosophers *philosopher);
 
