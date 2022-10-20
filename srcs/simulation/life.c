@@ -6,7 +6,7 @@
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:58:12 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/19 19:21:41 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/20 09:13:24 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ extern void	*life(void *philosopher)
 	philo = philosopher;
 	routine_tid = philo->routine;
 	pthread_create(&routine_tid, NULL, philo_routine, philo);
-	while (philo->alive)
+	while (philo->simulation_run && philo->alive)
 	{
 		current_time = get_current_time();
 		if (current_time - philo->last_meal >= philo->time_to_die)
 		{
 			philo->alive = false;
-			printf("Death of philosopher_%d\n", philo->name);
+			printf("%ld:Death of philosopher_%d\n", current_time, philo->name);
 			return (NULL);
 		}
 		else if (current_time - philo->last_meal >= philo->time_to_hunger)

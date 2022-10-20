@@ -6,7 +6,7 @@
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:48 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/19 19:23:58 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/20 10:39:23 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 #include "../../includes/philo.h"
 #include "../../includes/philosophers/philosopher.h"
 #include "../../includes/utils/utils.h"
+
+void	init_fork()
+{
+
+}
 
 struct s_philosophers	*init_philosophers(t_args args, bool *simulation_run)
 {
@@ -36,5 +41,6 @@ struct s_philosophers	*init_philosophers(t_args args, bool *simulation_run)
 		current->simulation_run = simulation_run;
 		i++;
 	}
+	init_fork();
 	return (philosophers);
 }

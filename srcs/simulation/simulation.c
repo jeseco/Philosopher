@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:19:18 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/18 13:54:35y jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:04:07 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	simulation_start(unsigned int nu_philo, t_philosophers *philosophers)
 	unsigned int	i;
 	t_philosophers	*current;
 	struct timeval	simulation_start_time;
-
 
 	i = 0;
 	gettimeofday(&simulation_start_time, NULL);
