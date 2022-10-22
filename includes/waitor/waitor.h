@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   waitor.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:53:03 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/18 12:50:54 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:21:48 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "../philosophers/philosopher.h"
 
-void	waitor(t_args args, t_philosophers *philosophers, bool *simulation_run);
+void	*waitor(void *philosophers);
 
 #endif

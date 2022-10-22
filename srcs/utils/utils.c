@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:41:16 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/18 13:38:12 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:21:06 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../../includes/philo.h"
 #include "../../includes/utils/utils.h"
 
-int	get_current_time(void)
+time_t	get_current_time(void)
 {
 	struct timeval	tv;
 

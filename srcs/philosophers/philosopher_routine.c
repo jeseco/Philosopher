@@ -6,7 +6,7 @@
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 03:46:58 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/20 12:12:19 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/21 15:22:00 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,14 @@
 void	philo_think(t_philosophers *philo)
 {
 	philo->state = THINKING;
-	while (philo->alive && philo->state != HUNGRY && philo->simulation_run)
-		usleep(10 * 1000);
+	if (philo->alive && philo->simulation_run && philo->state != HUNGRY)
+	{
+		printf("%ld: Philosophers_%d started thinking\n", \
+					get_current_time() - *(philo->simulation_start_time), \
+					philo->name);
+		while (philo->alive && philo->state != HUNGRY && philo->simulation_run)
+			usleep(1);
+	}
 }
 
 void	philo_sleep(t_philosophers *philo)
@@ -26,26 +32,33 @@ void	philo_sleep(t_philosophers *philo)
 	time_t	sleeping_start_time;
 
 	philo->state = SLEEPING;
-	sleeping_start_time = get_current_time();
-	while (philo->alive && philo->simulation_run && \
-	((get_current_time() - sleeping_start_time) != philo->time_to_sleep))
-		usleep(10 * 1000);
+	if (philo->alive && philo->simulation_run)
+	{
+		sleeping_start_time = get_current_time();
+		printf("%ld: Philosopher_%d started sleeping\n", \
+				get_current_time() - *(philo->simulation_start_time), \
+				philo->name);
+		while (philo->alive && philo->simulation_run && \
+		((get_current_time() - sleeping_start_time) < philo->time_to_sleep))
+			usleep(1);
+	}
 }
 
 void	philo_eat(t_philosophers *philo)
 {
-	time_t	eating_start_time;
+	time_t	time_eating;
 
-	while (philo->alive && philo->simulation_run)
+	time_eating = 0;
+	if (philo->alive && philo->simulation_run)
 	{
-		if (philo->r_fork && philo->l_fork)
-		{
-			eating_start_time = get_current_time();
-			while (get_current_time() - eating_start_time != philo->time_to_eat)
-				usleep(10 * 1000);
-		}
+		philo->state = EATING;
+		printf("%ld: Philosopher_%d started eating\n", \
+			get_current_time() - *(philo->simulation_start_time), \
+			philo->name);
+		while (time_eating < philo->time_to_eat)
+			time_eating += 10;
 	}
-	philo->last_meal = get_current_time();
+	philo->last_meal = get_current_time() - *(philo->simulation_start_time);
 }
 
 void	*philo_routine(void *philosopher)

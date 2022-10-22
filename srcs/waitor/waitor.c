@@ -3,28 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   waitor.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:52:20 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/18 14:13:46 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:13:19 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "../../includes/waitor/waitor.h"
 #include "../../includes/philosophers/philosopher.h"
+#include "../../includes/utils/utils.h"
 
-void	waitor(t_args args, t_philosophers *philosophers, bool *simulation_run)
+void	*waitor(void *philosophers)
 {
 	unsigned int	i;
+	t_philosophers	*philos;
+	bool			*sim_run;
 
-	i = 1;
-	while (simulation_run && i <= args.nu_philo)
+	i = 0;
+	philos = philosophers;
+	sim_run = philos->simulation_run;
+	while (sim_run)
 	{
-		if (!(philosophers[i].alive))
-			simulation_run = false;
-		if (i == args.nu_philo)
-			i = 1;
+		if (!(philos[i].alive))
+		{
+			printf("%ld: Death of philosopher_%d!\n", \
+			get_current_time() - *(philos->simulation_start_time), \
+			philos[i].name);
+			sim_run = false;
+		}
+		i++;
+		if (i == philos->nu_philos)
+			i = 0;
 	}
+	return (NULL);
 }

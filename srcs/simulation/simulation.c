@@ -6,7 +6,7 @@
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:19:18 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/20 09:04:07 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/21 15:24:45 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,29 @@
 int	create_life(void *philosopher)
 {
 	pthread_t		life_tid;
+	time_t			sim_start_time;
 	t_philosophers	*philo;
 
 	philo = philosopher;
 	life_tid = philo->life;
-	philo->alive = true;
-	printf("Birth of philosopher_%d\n", philo->name);
+	sim_start_time = *(philo->simulation_start_time);
+	printf("%ld: Birth of philosopher_%d\n", \
+		get_current_time() - sim_start_time, philo->name);
+	philo->last_meal = get_current_time() - sim_start_time;
 	pthread_create(&life_tid, NULL, life, philo);
 	return (0);
 }
 
-int	simulation_start(unsigned int nu_philo, t_philosophers *philosophers)
+int	simulation_start(t_philosophers *philosophers, \
+					time_t *simulation_start_time)
 {
 	unsigned int	i;
 	t_philosophers	*current;
-	struct timeval	simulation_start_time;
 
 	i = 0;
-	gettimeofday(&simulation_start_time, NULL);
-	printf("0000: simulation started\n");
-	while (i < nu_philo)
+	printf("0: Simulation started\n");
+	*simulation_start_time = get_current_time();
+	while (i < philosophers->nu_philos && philosophers->simulation_run)
 	{
 		current = philosophers + i;
 		create_life(current);
@@ -56,13 +59,17 @@ int	simulation_start(unsigned int nu_philo, t_philosophers *philosophers)
 int	simulation(t_args args)
 {
 	t_philosophers	*philosophers;
+	pthread_t		waitor_tid;
+	time_t			simulation_start_time;
 	bool			simulation_run;
 
-	philosophers = init_philosophers(args, &simulation_run);
+	philosophers = init_philosophers(args, &simulation_run, \
+									&simulation_start_time);
 	if (!philosophers)
 		return (exit_clean(philosophers));
 	simulation_run = true;
-	waitor(args, philosophers, &simulation_run);
-	simulation_start(args.nu_philo, philosophers);
+	pthread_create(&waitor_tid, NULL, waitor, philosophers);
+	simulation_start(philosophers, &simulation_start_time);
+	pthread_join(waitor_tid, NULL);
 	return (0);
 }
