@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   life.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:58:12 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/21 15:00:53 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/25 14:56:23 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ extern void	*life(void *philosopher)
 	pthread_create(&routine_tid, NULL, philo_routine, philo);
 	while (philo->simulation_run && philo->alive)
 	{
-		current_time = get_current_time();
+		current_time = get_current_time() - *(philo->simulation_start_time);
 		if ((current_time - philo->last_meal) >= \
 			(philo->last_meal + philo->time_to_die))
 		{

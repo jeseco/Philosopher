@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:56 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/21 09:46:36 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/25 15:46:33 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int	main(int argc, char **argv)
 		return (usage());
 	}
 	args = parse(argc, argv);
+	if (args.error)
+	{
+		printf("error in args");
+		return (0);
+	}
 	simulation(args);
 	return (0);
 }

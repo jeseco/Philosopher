@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosopher.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:44:04 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/20 12:45:17 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/25 15:47:56 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,15 @@ typedef enum e_State
 
 typedef struct s_philosophers
 {
-	unsigned int	nu_philos;
 	int				name;
 	bool			alive;
 	bool			*simulation_run;
+	unsigned int	nu_philos;
 	time_t			time_to_die;
 	time_t			time_to_eat;
 	time_t			time_to_sleep;
+	unsigned int	target_num_meal;
+	unsigned int	meal_eaten;
 	time_t			last_meal;
 	time_t			time_to_think;
 	time_t			time_to_hunger;
