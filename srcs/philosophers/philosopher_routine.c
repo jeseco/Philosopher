@@ -6,7 +6,7 @@
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 03:46:58 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/21 15:22:00 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/10/23 23:18:47 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,15 @@ void	philo_eat(t_philosophers *philo)
 {
 	time_t	time_eating;
 
-	time_eating = 0;
 	if (philo->alive && philo->simulation_run)
 	{
 		philo->state = EATING;
+		time_eating = get_current_time() - *(philo->simulation_start_time);
 		printf("%ld: Philosopher_%d started eating\n", \
 			get_current_time() - *(philo->simulation_start_time), \
 			philo->name);
-		while (time_eating < philo->time_to_eat)
-			time_eating += 10;
+		while (time_eating < philo->last_meal + philo->time_to_eat)
+			time_eating = get_current_time() - *(philo->simulation_start_time);
 	}
 	philo->last_meal = get_current_time() - *(philo->simulation_start_time);
 }
