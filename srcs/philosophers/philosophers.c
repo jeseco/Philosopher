@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:16:48 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/20 17:45:16 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/11/01 18:57:13 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ time_t *simulation_start_time)
 		current->simulation_run = simulation_run;
 		current->simulation_start_time = simulation_start_time;
 		current->time_to_hunger = random_float(current->time_to_think, i);
+		if (args.number_of_meal > 0)
+			current->target_num_meal = args.number_of_meal;
 		i++;
 	}
 	return (philosophers);

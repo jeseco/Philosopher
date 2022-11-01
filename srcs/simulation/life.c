@@ -6,7 +6,7 @@
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:58:12 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/25 14:56:23 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:45:03 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ extern void	*life(void *philosopher)
 	philo = philosopher;
 	routine_tid = philo->routine;
 	pthread_create(&routine_tid, NULL, philo_routine, philo);
-	while (philo->simulation_run && philo->alive)
+	while (philo->simulation_run && philo->alive && \
+	!(philo->objective_completed))
 	{
 		current_time = get_current_time() - *(philo->simulation_start_time);
 		if ((current_time - philo->last_meal) >= \
@@ -39,7 +40,7 @@ extern void	*life(void *philosopher)
 			return (NULL);
 		}
 		else if (current_time - philo->last_meal >= philo->time_to_hunger && \
-				philo->state != EATING)
+				philo->state != EATING && !(philo->objective_completed))
 		{
 			philo->state = HUNGRY;
 		}

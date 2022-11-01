@@ -6,7 +6,7 @@
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:44:04 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/10/25 15:47:56 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:33:28 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_philosophers
 	int				name;
 	bool			alive;
 	bool			*simulation_run;
+	bool			objective_completed;
 	unsigned int	nu_philos;
 	time_t			time_to_die;
 	time_t			time_to_eat;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   waitor.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:52:20 by jeseco            #+#    #+#             */
-/*   Updated: 2022/10/21 10:13:19 by jeseco           ###   ########.fr       */
+/*   Updated: 2022/11/01 18:34:45 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@
 #include "../../includes/philosophers/philosopher.h"
 #include "../../includes/utils/utils.h"
 
+bool	objective_completed(t_philosophers *philos)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < philos->nu_philos)
+	{
+		if (!(philos[i].objective_completed))
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
 void	*waitor(void *philosophers)
 {
 	unsigned int	i;
@@ -26,7 +40,7 @@ void	*waitor(void *philosophers)
 	i = 0;
 	philos = philosophers;
 	sim_run = philos->simulation_run;
-	while (sim_run)
+	while (sim_run && !(objective_completed(philos)))
 	{
 		if (!(philos[i].alive))
 		{
@@ -36,6 +50,8 @@ void	*waitor(void *philosophers)
 			sim_run = false;
 		}
 		i++;
+		if (objective_completed(philos))
+			return (NULL);
 		if (i == philos->nu_philos)
 			i = 0;
 	}
