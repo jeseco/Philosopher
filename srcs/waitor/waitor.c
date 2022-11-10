@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   waitor.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:52:20 by jeseco            #+#    #+#             */
-/*   Updated: 2022/11/01 18:34:45 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:01:44 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ bool	objective_completed(t_philosophers *philos)
 	unsigned int	i;
 
 	i = 0;
-	while (i < philos->nu_philos)
+	while (i < philos->args.nu_philo)
 	{
 		if (!(philos[i].objective_completed))
 			return (false);
@@ -44,7 +44,7 @@ void	*waitor(void *philosophers)
 	{
 		if (!(philos[i].alive))
 		{
-			printf("%ld: Death of philosopher_%d!\n", \
+			printf("\033[0;31m%ld Philosopher_%d died!\033[0m\n", \
 			get_current_time() - *(philos->simulation_start_time), \
 			philos[i].name);
 			sim_run = false;
@@ -52,7 +52,7 @@ void	*waitor(void *philosophers)
 		i++;
 		if (objective_completed(philos))
 			return (NULL);
-		if (i == philos->nu_philos)
+		if (i == philos->args.nu_philo)
 			i = 0;
 	}
 	return (NULL);

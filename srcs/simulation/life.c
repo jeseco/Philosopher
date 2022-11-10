@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   life.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:58:12 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/11/01 18:45:03 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/11/03 20:39:04 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ extern void	*life(void *philosopher)
 	{
 		current_time = get_current_time() - *(philo->simulation_start_time);
 		if ((current_time - philo->last_meal) >= \
-			(philo->last_meal + philo->time_to_die))
+			(philo->last_meal + philo->args.time_to_die))
 		{
 			philo->alive = false;
 			return (NULL);

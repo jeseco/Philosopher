@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosopher.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:44:04 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/11/01 18:33:28 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:44:49 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,23 @@ typedef struct s_philosophers
 	bool			alive;
 	bool			*simulation_run;
 	bool			objective_completed;
-	unsigned int	nu_philos;
-	time_t			time_to_die;
-	time_t			time_to_eat;
-	time_t			time_to_sleep;
+	t_args			args;
 	unsigned int	target_num_meal;
 	unsigned int	meal_eaten;
 	time_t			last_meal;
 	time_t			time_to_think;
 	time_t			time_to_hunger;
 	time_t			*simulation_start_time;
-	void			*r_fork;
-	void			*l_fork;
+	pthread_mutex_t	*r_fork;
+	pthread_mutex_t	*l_fork;
 	pthread_t		life;	
 	pthread_t		routine;
 	t_State			state;
 }	t_philosophers;
 
 struct s_philosophers	*init_philosophers(t_args args, bool *simulation_run, \
-										time_t *simulation_start_time);
+										time_t *simulation_start_time, \
+										pthread_mutex_t *forks);
 
 void					*philo_routine(void *philo);
 

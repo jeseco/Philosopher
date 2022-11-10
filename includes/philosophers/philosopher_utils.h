@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.h                                          :+:      :+:    :+:   */
+/*   philosopher_utils.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 12:49:45 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/11/03 20:43:58 by jeseco           ###   ########.fr       */
+/*   Created: 2022/11/08 11:33:47 by jeseco            #+#    #+#             */
+/*   Updated: 2022/11/08 11:37:26 by jeseco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#ifndef PHILOSOPHER_UTILS_H
+# define PHILOSOPHER_UTILS_H
 
-# include <stdbool.h>
-# include <string.h>
-# include <time.h>
+# include "philosopher.h"
 
-# include "ft_isdigit.h"
-# include "ft_atol.h"
+void	take_fork(t_philosophers *philo);
 
-typedef struct s_args {
-	time_t			nu_philo;
-	time_t			time_to_die;
-	time_t			time_to_eat;
-	time_t			time_to_sleep;
-	unsigned long	number_of_meal;
-	bool			error;
-}	t_args;	
-
-t_args	parse(int argc, char **argv);
+void	drop_fork(t_philosophers *philo);
 
 #endif

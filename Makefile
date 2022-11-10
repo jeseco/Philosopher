@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+         #
+#    By: jeseco <jeseco@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 14:14:28 by jcourtem          #+#    #+#              #
-#    Updated: 2022/10/18 14:07:11 by jcourtem         ###   ########.fr        #
+#    Updated: 2022/11/08 11:39:42 by jeseco           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,9 +39,11 @@ SIMULATION_HDRS		=	simulation.h	\
 						life.h
 
 PHILOSOPHERS_FILES	= 	philosophers.c	\
-						philosopher_routine.c
-PHILOSOPHERS_HDRS	= 	philosophers.h	\
-						philosopher_routine.h
+						philosopher_routine.c \
+						philo_routine_utils.c
+PHILOSOPHERS_HDRS	= 	philsophers.h	\
+						philosopher_routine.h \
+						philosopher_utils.h
 
 UTILS_FILES			=	utils.c			\
 						ft_bzero.c		\
